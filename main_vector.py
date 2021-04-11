@@ -20,3 +20,11 @@ if __name__ == "__main__":
     print(zero2)
 
     print("{} + {} = {}".format(vec, zero2, vec+zero2))
+
+    print("norm({}) = {}".format(vec, vec.norm()))
+    print("norm({}) = {}".format(vec2, vec2.norm()))
+
+    print("normalization({})= {}".format(vec, vec.normalize()))
+
+    print("normalization({})= {}".format(zero2, zero2.normalize()))
+

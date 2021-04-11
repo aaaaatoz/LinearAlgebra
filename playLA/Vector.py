@@ -1,3 +1,7 @@
+import math
+
+from ._global import EPSILON
+
 class Vector:
 
     def __init__(self, lst):
@@ -42,3 +46,14 @@ class Vector:
 
     def __getitem__(self, index):
         return self._values[index]
+
+    def norm(self):
+        return math.sqrt((sum( e**2 for e in self._values)))
+
+    def normalize(self):
+        if self.norm() < EPSILON:
+            raise ZeroDivisionError("can't normalize the vector")
+        return 1 / self.norm() * self
+
+    def __truediv__(self, k):
+        return (1/k) * self
